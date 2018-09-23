@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-	<div class="main">
-		<div class="container">
+	<div class="container">
+		<div class="main">
 			<?php if(have_posts()) : ?>
 				<?php while(have_posts()): the_post(); ?>
 					<article class="post">
@@ -9,7 +9,7 @@
 						<div class="meta">
 						  Created By <?php the_author(); ?> on <?php the_time('F j, Y g:i a'); ?>
 						</div>
-            <!-- Check if post has feature image -->
+	          <!-- Check if post has feature image -->
 						<?php if (has_post_thumbnail()) : ?>
 							<div class="post-thumbnail">
 								<?php the_post_thumbnail(); ?>
@@ -21,7 +21,8 @@
 			<?php else : ?>
 				<?php echo wpautop('Sorry, No posts were found'); ?>
 			<?php endif; ?>
+
+			<?php comments_template(); ?>
 		</div>
-	</div>
 
 <?php get_footer(); ?>
